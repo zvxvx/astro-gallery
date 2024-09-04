@@ -6,5 +6,7 @@ const bwCatPhoto = await getEntry("bw", "flower");
 ---
 
 <BaseLayout title="Photos">
-  <Category categoryPhoto={bwCatPhoto} categoryName="Black & White" />
+  <ul class="grid sm:grid-cols-2 gap-2 p-0">
+    <Category categoryPhoto={bwCatPhoto} categoryName="Black & White" />
+  </ul>
 </BaseLayout>

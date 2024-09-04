@@ -1,0 +1,18 @@
+---
+import Picture from "astro/components/Picture.astro";
+const { image, title, date } = Astro.props;
+---
+
+<a href="/photos/bw">
+  <Picture
+    src={image}
+    alt={title}
+    quality={"max"}
+    class="mt-[-12px] mb-[-32px] border-[16px] border-black"
+  />
+</a>
+<div class="bg-black flex justify-between items-center px-4 pb-4 text-white">
+  <p class="m-0">{date.toISOString().slice(0, 10)}</p>
+  <p class="m-0 font-bold italic">{title}</p>
+  <p class="m-0">Astro Gallery</p>
+</div>
