@@ -1,21 +1,10 @@
 ---
 import { getEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Image from "astro/components/Image.astro";
+import Category from "../components/Category.astro";
 const bwCatPhoto = await getEntry("bw", "flower");
 ---
 
 <BaseLayout title="Photos">
-  <ul class="grid sm:grid-cols-2 gap-2 p-0">
-    <li class="border-4 border-black bg-black m-0 p-0 list-none">
-      <a href="/photos/bw">
-        <Image
-          class="m-0"
-          src={bwCatPhoto.data.image}
-          alt={bwCatPhoto.data.title}
-        />
-        <p class="m-0 text-white text-center">Black & White</p>
-      </a>
-    </li>
-  </ul>
+  <Category categoryPhoto={bwCatPhoto} categoryName="Black & White" />
 </BaseLayout>
