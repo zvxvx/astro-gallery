@@ -7,7 +7,7 @@ const latestPhoto = await getEntry("color", "living_spaces");
 const blogEntries = await getCollection("blog");
 const latestBlogPosts = blogEntries
   .sort((a: any, b: any) => b.data.date - a.data.date)
-  .slice(0, 5);
+  .slice(0, 4);
 ---
 
 <BaseLayout title="Home">
@@ -25,13 +25,11 @@ const latestBlogPosts = blogEntries
   <ul class="p-0 grid sm:grid-cols-2 gap-2">
     {
       latestBlogPosts.map((post) => (
-        <div class="border border-black p-2">
-          <a href={`/blog/${post.slug}`}>
-            <h2>{post.data.title}</h2>
-            <h3>{post.data.date.toISOString().slice(0, 10)}</h3>
-            <p>{post.data.description}</p>
-          </a>
-        </div>
+        <a class="border border-black p-2" href={`/blog/${post.slug}`}>
+          <h2>{post.data.title}</h2>
+          <h3>{post.data.date.toISOString().slice(0, 10)}</h3>
+          <p>{post.data.description}</p>
+        </a>
       ))
     }
   </ul>
