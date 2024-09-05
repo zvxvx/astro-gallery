@@ -1,19 +1,20 @@
 ---
 import Image from "astro/components/Image.astro";
-const { gallery, categoryPath } = Astro.props;
+const { gallery } = Astro.props;
 ---
 
 <ul class="grid sm:grid-cols-2 gap-2 p-0">
   {
     gallery.map((p) => (
       <li class="list-none p-0 m-0">
-        <a href={`/photos/${categoryPath}/${p.data.slug}`}>
+        <a href={`/photos/${p.collection}/${p.data.slug}`}>
           <Image
             class="object-cover h-80 border-8 border-black m-0"
             src={p.data.image}
             alt={p.data.title}
             quality={50}
             loading="lazy"
+            format="avif"
           />
         </a>
       </li>
