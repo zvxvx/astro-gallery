@@ -11,11 +11,17 @@ export const getStaticPaths = async () => {
 };
 const {
   p: {
+    collection,
     data: { title, date, image },
   },
 } = Astro.props;
 ---
 
 <PhotoLayout title={title}>
-  <Photograph image={image} title={title} date={date} categoryPath="color" />
+  <Photograph
+    image={image}
+    title={title}
+    date={date}
+    categoryPath={collection}
+  />
 </PhotoLayout>
