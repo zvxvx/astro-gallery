@@ -9,6 +9,9 @@ const { categoryPhoto, categoryName, categoryPath } = Astro.props;
       class="m-0 object-cover h-80"
       src={categoryPhoto.data.image}
       alt={categoryPhoto.data.title}
+      quality={50}
+      loading="lazy"
+      format="avif"
     />
     <p class="m-0 text-white text-center">{categoryName}</p>
   </a>
