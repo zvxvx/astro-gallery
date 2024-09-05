@@ -2,7 +2,6 @@
 import { getEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Image from "astro/components/Image.astro";
-import { getEntries } from "astro:content";
 import { getCollection } from "astro:content";
 const latestPhoto = await getEntry("color", "living_spaces");
 const blogEntries = await getCollection("blog");
