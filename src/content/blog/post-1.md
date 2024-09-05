@@ -1,7 +1,9 @@
 ---
-title: Astro Gallery
+layout: ../../layouts/MarkdownLayout.astro
+title: Welcome!
 date: 2024-09-03
-description: This description is optional.
+description: This is an optional description of the blog post.
+image: /src/assets/gallery.jpg
 ---
-# Hello!
-This is my first post!
+
+Hello and welcome to the **Astro Gallery**! Feel free to peruse this example site to find if it suits your needs. It is completely modular so you can add as many categories as you'd like. Or if you prefer to only list thumbnails in the /photos/ page instead, it is possible to do that too (although you'll need to be familiar with content collections and dynamic path generation in order to move the code around correctly).
