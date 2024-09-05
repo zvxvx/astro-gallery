@@ -4,8 +4,15 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title="blog post">
-  <h1>{frontmatter.title}</h1>
-  <h2>{frontmatter.date.toString().slice(0, 10)}</h2>
-  <h4>{frontmatter.description}</h4>
+  <img
+    class="w-full h-80 object-cover border-8 border-black"
+    src={frontmatter.image}
+    alt={frontmatter.title}
+  />
+  <div class="border border-b-black">
+    <h1>{frontmatter.title}</h1>
+    <h2>{frontmatter.date.toString().slice(0, 10)}</h2>
+    <h4>{frontmatter.description}</h4>
+  </div>
   <slot />
 </BaseLayout>
