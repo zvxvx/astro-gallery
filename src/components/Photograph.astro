@@ -3,11 +3,12 @@ import Picture from "astro/components/Picture.astro";
 const { image, title, date, categoryPath } = Astro.props;
 ---
 
-<a href=`/photos/${categoryPath}`>
+<a class="hover:cursor-pointer" href=`/photos/${categoryPath}`>
   <Picture
     src={image}
     alt={title}
     quality={"max"}
+    formats={["avif"]}
     class="mt-[-12px] mb-[-32px] border-[16px] border-black"
   />
 </a>
