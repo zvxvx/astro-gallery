@@ -1,6 +1,33 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import { getEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Image from "astro/components/Image.astro";
+import { getEntries } from "astro:content";
+import { getCollection } from "astro:content";
+const latestPhoto = await getEntry("color", "living_spaces");
+const blogEntries = await getCollection("blog");
+const latestBlogPosts = blogEntries.slice(0, 5);
 ---
+
 <BaseLayout title="Home">
-  <p>Hello from index</p>
+  <h2 class="pt-2">Latest photo</h2>
+  <a href={`/photos/${latestPhoto.collection}/${latestPhoto.data.slug}`}>
+    <Image
+      class="object-cover h-80 w-full border-8 border-black"
+      src={latestPhoto.data.image}
+      alt={latestPhoto.data.title}
+    />
+  </a>
+  <h2>Latest posts</h2>
+  <ul class="p-0 grid sm:grid-cols-2">
+    {
+      latestBlogPosts.map((post) => (
+        <div class="border border-black p-2">
+          <h2>{post.data.title}</h2>
+          <h3>{post.data.date.toISOString().slice(0, 10)}</h3>
+          <p>{post.data.description}</p>
+        </div>
+      ))
+    }
+  </ul>
 </BaseLayout>
