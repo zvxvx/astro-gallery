@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 const latestPhoto = await getEntry("color", "living_spaces");
 const blogEntries = await getCollection("blog");
 const latestBlogPosts = blogEntries
-  .sort((a, b) => b.data.date - a.data.date)
+  .sort((a: any, b: any) => b.data.date - a.data.date)
   .slice(0, 5);
 ---
 
