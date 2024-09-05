@@ -5,6 +5,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-photo-gallery.netlify.app", //change to your site
+  site: "https://astro-gallery.v9x.net/", //change to your site
   integrations: [tailwind(), robotsTxt(), sitemap()],
 });
