@@ -1,0 +1,10 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Thumbnails from "../../components/Thumbnails.astro";
+const colorPhotos = await getCollection("color");
+---
+
+<BaseLayout title="Photos">
+  <Thumbnails gallery={colorPhotos} categoryPath="color" />
+</BaseLayout>

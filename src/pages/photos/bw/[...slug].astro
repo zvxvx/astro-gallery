@@ -1,7 +1,6 @@
 ---
 import PhotoLayout from "../../../layouts/PhotoLayout.astro";
 import { getCollection } from "astro:content";
-import Picture from "astro/components/Picture.astro";
 import Photograph from "../../../components/Photograph.astro";
 export const getStaticPaths = async () => {
   const bw = await getCollection("bw");
@@ -18,5 +17,5 @@ const {
 ---
 
 <PhotoLayout title={title}>
-  <Photograph image={image} title={title} date={date} />
+  <Photograph image={image} title={title} date={date} categoryPath="bw" />
 </PhotoLayout>
