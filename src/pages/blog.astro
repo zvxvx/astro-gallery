@@ -11,8 +11,8 @@ console.log(blogPosts);
       blogPosts.map((p) => (
         <li>
           <a href={`/${p.collection}/${p.slug}`}>
-            <span>{p.data.date.toDateString()}: </span>
-            {p.data.title}
+            <span>{p.data.date.toISOString().slice(0, 10)}: </span>
+            <span class="font-bold">{p.data.title}</span>
           </a>
         </li>
       ))
