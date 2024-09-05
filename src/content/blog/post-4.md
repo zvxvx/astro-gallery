@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
-title: About Astro Gallery
-date: 2024-08-23
-description: Read this post to learn more about Astro Gallery.
+title: Early morning
+date: 2024-09-03
+description: Why waking up early is the best for photography.
 image: /src/assets/gallery.jpg
 ---
 

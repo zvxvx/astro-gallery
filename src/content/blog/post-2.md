@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
-title: About Astro Gallery
-date: 2024-08-23
-description: Read this post to learn more about Astro Gallery.
+title: Hi again!
+date: 2024-09-04
+description: Took some pretty cool shots today.
 image: /src/assets/gallery.jpg
 ---
 
