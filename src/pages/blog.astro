@@ -2,17 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 const blogPosts = await getCollection("blog");
+console.log(blogPosts);
 ---
 
 <BaseLayout title="Blog">
   <ul>
     {
-      blogPosts.map(({ data: { date, title } }) => (
+      blogPosts.map((p) => (
         <li>
-          <p>
-            <span>{date.toDateString()}: </span>
-            {title}
-          </p>
+          <a href={`/${p.collection}/${p.slug}`}>
+            <span>{p.data.date.toDateString()}: </span>
+            {p.data.title}
+          </a>
         </li>
       ))
     }
