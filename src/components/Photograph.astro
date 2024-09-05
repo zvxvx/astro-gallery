@@ -1,9 +1,9 @@
 ---
 import Picture from "astro/components/Picture.astro";
-const { image, title, date } = Astro.props;
+const { image, title, date, categoryPath } = Astro.props;
 ---
 
-<a href="/photos/bw">
+<a href=`/photos/${categoryPath}`>
   <Picture
     src={image}
     alt={title}

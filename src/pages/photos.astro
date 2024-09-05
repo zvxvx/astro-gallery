@@ -2,11 +2,21 @@
 import { getEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Category from "../components/Category.astro";
-const bwCatPhoto = await getEntry("bw", "flower");
+const bwCatPhoto = await getEntry("bw", "dock");
+const colorCatPhoto = await getEntry("color", "shipwrecked");
 ---
 
 <BaseLayout title="Photos">
   <ul class="grid sm:grid-cols-2 gap-2 p-0">
-    <Category categoryPhoto={bwCatPhoto} categoryName="Black & White" />
+    <Category
+      categoryPhoto={bwCatPhoto}
+      categoryName="Black & White"
+      categoryPath="bw"
+    />
+    <Category
+      categoryPhoto={colorCatPhoto}
+      categoryName="Color"
+      categoryPath="color"
+    />
   </ul>
 </BaseLayout>

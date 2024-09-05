@@ -1,12 +1,12 @@
 ---
 import Image from "astro/components/Image.astro";
-const { categoryPhoto, categoryName } = Astro.props;
+const { categoryPhoto, categoryName, categoryPath } = Astro.props;
 ---
 
 <li class="border-4 border-black bg-black m-0 p-0 list-none">
-  <a href="/photos/bw">
+  <a href=`/photos/${categoryPath}`>
     <Image
-      class="m-0"
+      class="m-0 object-cover h-80"
       src={categoryPhoto.data.image}
       alt={categoryPhoto.data.title}
     />
