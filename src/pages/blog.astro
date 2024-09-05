@@ -2,13 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 const blogPosts = await getCollection("blog");
-console.log(blogPosts);
+const newestPosts = blogPosts.sort(
+  (a: any, b: any) => b.data.date - a.data.date
+);
 ---
 
 <BaseLayout title="Blog">
   <ul>
     {
-      blogPosts.map((p) => (
+      newestPosts.map((p) => (
         <li>
           <a href={`/${p.collection}/${p.slug}`}>
             <span>{p.data.date.toISOString().slice(0, 10)}: </span>
