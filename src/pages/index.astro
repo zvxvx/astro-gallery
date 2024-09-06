@@ -3,20 +3,20 @@ import { getEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Image from "astro/components/Image.astro";
 import { getCollection } from "astro:content";
-const latestPhoto = await getEntry("color", "living_spaces");
+const featuredPhoto = await getEntry("color", "living_spaces");
 const blogEntries = await getCollection("blog");
-const latestBlogPosts = blogEntries
+const latestBlogEntries = blogEntries
   .sort((a: any, b: any) => b.data.date - a.data.date)
   .slice(0, 4);
 ---
 
 <BaseLayout title="Home">
-  <h2 class="pt-2">Latest photo</h2>
-  <a href={`/photos/${latestPhoto.collection}/${latestPhoto.data.slug}`}>
+  <h2 class="pt-2">Featured Photo</h2>
+  <a href={`/photos/${featuredPhoto.collection}/${featuredPhoto.data.slug}`}>
     <Image
       class="mt-0 object-cover h-80 w-full border-8 border-black"
-      src={latestPhoto.data.image}
-      alt={latestPhoto.data.title}
+      src={featuredPhoto.data.image}
+      alt={featuredPhoto.data.title}
       quality={50}
       format="avif"
     />
@@ -24,9 +24,9 @@ const latestBlogPosts = blogEntries
   <h2>Latest posts</h2>
   <ul class="p-0 grid sm:grid-cols-2 gap-2">
     {
-      latestBlogPosts.map((post) => (
+      latestBlogEntries.map((post) => (
         <a
-          class="border border-black bg-slate-300 p-2"
+          class="border border-black bg-slate-300 p-2 hover:bg-slate-400"
           href={`/blog/${post.slug}`}
         >
           <h2>{post.data.title}</h2>
