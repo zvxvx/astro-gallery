@@ -9,10 +9,12 @@ const { image, title, date, categoryPath } = Astro.props;
     alt={title}
     quality={"max"}
     formats={["avif"]}
-    class="mt-[-12px] mb-[-32px] border-[16px] border-black"
+    class="mt-[-12px] mb-[-32px] border-[16px] border-black dark:border-white"
   />
 </a>
-<div class="bg-black flex justify-between items-center px-4 pb-4 text-white">
+<div
+  class="bg-black dark:bg-white flex justify-between items-center px-4 pb-4 text-white dark:text-black"
+>
   <p class="m-0">{date.toISOString().slice(0, 10)}</p>
   <p class="m-0 font-bold italic">{title}</p>
   <p class="m-0">Your Name</p>

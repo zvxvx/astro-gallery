@@ -4,11 +4,10 @@ const path = Astro.url.pathname;
 const activePath = "font-bold";
 ---
 
-<div class="border-b-2 border-black">
-  <h1>{title}</h1>
-  <nav>
-    <a href="/" class=`${path === "/" && activePath}`>Home</a>
-    <a href="/blog/" class=`${path === "/blog/"&& activePath}`>Blog</a>
-    <a href="/photos/" class=`${path === "/photos/"&& activePath}`>Photos</a>
-  </nav>
-</div>
+<h1>{title}</h1>
+<nav class="text-xl">
+  <a href="/" class=`${path === "/" && activePath}`>Home</a>
+  <a href="/blog/" class=`${path === "/blog/"&& activePath}`>Blog</a>
+  <a href="/photos/" class=`${path === "/photos/"&& activePath}`>Photos</a>
+</nav>
+<hr />

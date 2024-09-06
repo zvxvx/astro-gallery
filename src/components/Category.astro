@@ -3,7 +3,7 @@ import Image from "astro/components/Image.astro";
 const { categoryPhoto, categoryName, categoryPath } = Astro.props;
 ---
 
-<li class="border-4 border-black bg-black m-0 p-0 list-none">
+<li class="border-4 border-black dark:border-white m-0 p-0 list-none relative">
   <a href=`/photos/${categoryPath}`>
     <Image
       class="m-0 object-cover h-80"
@@ -13,6 +13,9 @@ const { categoryPhoto, categoryName, categoryPath } = Astro.props;
       loading="lazy"
       format="avif"
     />
-    <p class="m-0 text-white text-center">{categoryName}</p>
+    <p
+      class="m-0 absolute bottom-0 bg-white/50 dark:bg-black/30 w-full text-center text-2xl"
+      >{categoryName}</p
+    >
   </a>
 </li>

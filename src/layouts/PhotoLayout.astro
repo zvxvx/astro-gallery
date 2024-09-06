@@ -2,8 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
-const style =
-  "prose prose-headings:m-0 bg-slate-200 mx-auto prose-a:no-underline max-w-5xl px-2";
+import { STYLE } from "../styleVars";
 ---
 
 <html lang="en">
@@ -15,7 +14,7 @@ const style =
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Astro Gallery | {title}</title>
   </head>
-  <body class={style}>
+  <body class={`${STYLE} max-w-6xl`}>
     <Header title=`Astro Gallery | ${title}` />
     <slot />
     <Footer />
