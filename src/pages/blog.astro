@@ -11,9 +11,9 @@ const newestPosts = blogPosts.sort(
   <ul>
     {
       newestPosts.map((p) => (
-        <li class="hover:underline">
+        <li class="hover:underline text-xl">
           <a href={`/${p.collection}/${p.slug}`}>
-            <span>{p.data.date.toISOString().slice(0, 10)}: </span>
+            <span>[{p.data.date.toISOString().slice(0, 10)}] </span>
             <span class="font-bold">{p.data.title}</span>
           </a>
         </li>
