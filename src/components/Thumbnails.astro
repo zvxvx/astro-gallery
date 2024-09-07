@@ -3,7 +3,7 @@ import Image from "astro/components/Image.astro";
 const { gallery } = Astro.props;
 ---
 
-<ul class="grid sm:grid-cols-2 gap-2 p-0">
+<ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-2 p-0">
   {
     gallery.map((p: any) => (
       <li class="list-none p-0 m-0">
