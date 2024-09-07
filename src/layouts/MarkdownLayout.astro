@@ -1,13 +1,17 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Image from "astro/components/Image.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title="Blog Post">
-  <img
-    class="w-full h-80 object-cover border-8 dark:border-white border-black"
+  <!-- To keep hero images consistent in style, I am using tailwind to overwrite the height. In this particular use case, I had to define width and height in Image, because... I have no clue. -->
+  <Image
+    class="object-cover h-80 border-8 dark:border-white border-black"
     src={frontmatter.image}
     alt={frontmatter.title}
+    width={600}
+    height={600}
   />
   <div>
     <h1>{frontmatter.title}</h1>
