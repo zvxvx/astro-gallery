@@ -9,7 +9,7 @@ const { gallery } = Astro.props;
       <li class="list-none p-0 m-0">
         <a href={`/photos/${p.collection}/${p.data.slug}`}>
           <Image
-            class="object-cover h-80 border-8 border-black dark:border-white m-0"
+            class="object-cover aspect-square border-8 border-black dark:border-white m-0"
             src={p.data.image}
             alt={p.data.title}
             quality={50}

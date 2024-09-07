@@ -6,7 +6,7 @@ const { categoryPhoto, categoryName, categoryPath } = Astro.props;
 <li class="border-4 border-black dark:border-white m-0 p-0 list-none relative">
   <a href=`/photos/${categoryPath}`>
     <Image
-      class="m-0 object-cover h-80"
+      class="m-0 object-cover aspect-square"
       src={categoryPhoto.data.image}
       alt={categoryPhoto.data.title}
       quality={50}
