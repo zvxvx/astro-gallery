@@ -8,10 +8,10 @@ const newestPosts = blogPosts.sort(
 ---
 
 <BaseLayout title="Blog">
-  <ul>
+  <ul class="p-0">
     {
       newestPosts.map((p) => (
-        <li class="hover:underline text-xl">
+        <li class="hover:underline text-xl p-0 list-none">
           <a href={`/${p.collection}/${p.slug}`}>
             <span>[{p.data.date.toISOString().slice(0, 10)}] </span>
             <span class="font-bold">{p.data.title}</span>
