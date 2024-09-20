@@ -3,9 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Thumbnails from "../../components/Thumbnails.astro";
 const photos = await getCollection("photos");
-const monochrome = photos
-  .filter((e) => e.data.category === "monochrome")
-  .sort((a: any, b: any) => b.data.date - a.data.date);
+const monochrome = photos.filter((e) => e.data.category === "monochrome");
 ---
 
 <BaseLayout title="Monochrome">
