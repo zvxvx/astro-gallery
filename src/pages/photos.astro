@@ -1,20 +1,16 @@
 ---
 import { getEntry } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import PhotoLayout from "../layouts/PhotoLayout.astro";
 import Category from "../components/Category.astro";
 const monoCategoryPhoto = await getEntry("photos", "dock");
 const colorCategoryPhoto = await getEntry("photos", "shipwrecked");
 ---
 
-<BaseLayout title="Photos">
-  <ul class="grid sm:grid-cols-2 gap-2 p-0">
-    <Category
-      entry={monoCategoryPhoto}
-      path={monoCategoryPhoto.data.category}
-    />
-    <Category
-      entry={colorCategoryPhoto}
-      path={colorCategoryPhoto.data.category}
-    />
+<PhotoLayout title="Photos">
+  <ul
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 p-0"
+  >
+    <Category entry={monoCategoryPhoto} />
+    <Category entry={colorCategoryPhoto} />
   </ul>
-</BaseLayout>
+</PhotoLayout>

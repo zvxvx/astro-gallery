@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import PhotoLayout from "../../layouts/PhotoLayout.astro";
 import Thumbnails from "../../components/Thumbnails.astro";
 const photos = await getCollection("photos");
 const color = photos.filter((e) => e.data.category === "color");
 ---
 
-<BaseLayout title="Color">
+<PhotoLayout title="Color">
   <Thumbnails gallery={color} />
-</BaseLayout>
+</PhotoLayout>

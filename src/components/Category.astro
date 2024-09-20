@@ -1,10 +1,10 @@
 ---
 import Image from "astro/components/Image.astro";
-const { entry, path } = Astro.props;
+const { entry } = Astro.props;
 ---
 
 <li class="border-4 border-black dark:border-white m-0 p-0 list-none relative">
-  <a href=`/${entry.collection}/${path}`>
+  <a href=`/${entry.collection}/${entry.data.category}`>
     <Image
       class="m-0 object-cover aspect-square"
       src={entry.data.image}
