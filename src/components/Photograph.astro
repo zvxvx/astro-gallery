@@ -1,21 +1,27 @@
 ---
+import PhotoLayout from "../layouts/PhotoLayout.astro";
 import Picture from "astro/components/Picture.astro";
-const { image, title, date, categoryPath } = Astro.props;
+const { entry } = Astro.props;
 ---
 
-<a class="hover:cursor-pointer" href=`/photos/${categoryPath}`>
-  <Picture
-    src={image}
-    alt={title}
-    quality={"max"}
-    formats={["avif"]}
-    class="mt-[-24px] mb-[-32px] border-[16px] border-black dark:border-white"
-  />
-</a>
-<div
-  class="bg-black dark:bg-white flex justify-between items-center px-4 text-white dark:text-black pb-4"
->
-  <p class="m-0">{date.toISOString().slice(0, 10)}</p>
-  <p class="m-0 font-bold italic">{title}</p>
-  <p class="m-0">Your Name</p>
-</div>
+<PhotoLayout title={entry.data.title}>
+  <a
+    class="hover:cursor-pointer"
+    href=`/${entry.collection}/${entry.data.category}`
+  >
+    <Picture
+      src={entry.data.image}
+      alt={entry.data.title}
+      quality={"max"}
+      formats={["avif"]}
+      class="mt-[-24px] mb-[-32px] border-[16px] border-black dark:border-white"
+    />
+  </a>
+  <div
+    class="bg-black dark:bg-white flex justify-between items-center px-4 text-white dark:text-black pb-4"
+  >
+    <p class="m-0">{entry.data.date.toISOString().slice(0, 10)}</p>
+    <p class="m-0 font-bold italic">{entry.data.title}</p>
+    <p class="m-0">Your Name</p>
+  </div>
+</PhotoLayout>

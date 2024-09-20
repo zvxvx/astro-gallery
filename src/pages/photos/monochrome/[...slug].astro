@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import Photograph from "../../../components/Photograph.astro";
 export const getStaticPaths = async () => {
   const photos = await getCollection("photos");
-  const color = photos.filter((e) => e.data.category === "color");
+  const color = photos.filter((e) => e.data.category === "monochrome");
   return color.map((p) => ({
     params: { slug: p.id },
     props: { p },

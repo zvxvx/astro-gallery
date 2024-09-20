@@ -9,29 +9,18 @@ const blogCollection = defineCollection({
     description: z.string().optional(),
   }),
 });
-const bwCollection = defineCollection({
+const photoCollection = defineCollection({
   type: "data",
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      slug: z.string(),
       image: image(),
       date: z.date(),
-    }),
-});
-const colorCollection = defineCollection({
-  type: "data",
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      slug: z.string(),
-      image: image(),
-      date: z.date(),
+      category: z.string(),
     }),
 });
 
 export const collections = {
   blog: blogCollection,
-  bw: bwCollection,
-  color: colorCollection,
+  photos: photoCollection,
 };

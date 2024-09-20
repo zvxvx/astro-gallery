@@ -7,7 +7,7 @@ const { gallery } = Astro.props;
   {
     gallery.map((p: any) => (
       <li class="list-none p-0 m-0">
-        <a href={`/photos/${p.collection}/${p.data.slug}`}>
+        <a href={`/${p.collection}/${p.data.category}/${p.id}`}>
           <Image
             class="object-cover aspect-square border-8 border-black dark:border-white m-0"
             src={p.data.image}

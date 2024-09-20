@@ -3,7 +3,7 @@ import { getEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Image from "astro/components/Image.astro";
 import { getCollection } from "astro:content";
-const featuredPhoto = await getEntry("color", "living_spaces");
+const featuredPhoto = await getEntry("photos", "living-spaces");
 const blogEntries = await getCollection("blog");
 const latestBlogEntries = blogEntries
   .sort((a: any, b: any) => b.data.date - a.data.date)
@@ -12,11 +12,13 @@ const latestBlogEntries = blogEntries
 
 <BaseLayout title="Home">
   <h2>Featured Photo</h2>
-  <a href={`/photos/${featuredPhoto.collection}/${featuredPhoto.data.slug}`}>
+  <a
+    href={`/${featuredPhoto?.collection}/${featuredPhoto?.data.category}/${featuredPhoto?.id}`}
+  >
     <Image
       class="mt-0 object-cover h-80 w-full border-8 dark:border-white border-black"
-      src={featuredPhoto.data.image}
-      alt={featuredPhoto.data.title}
+      src={featuredPhoto?.data.image}
+      alt={featuredPhoto?.data.title}
       quality={50}
       format="avif"
     />
